@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avinash</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+    <div class="app-container">
+        <!-- Sidebar Settings -->
+        <aside class="sidebar glass-panel">
+            <div class="sidebar-header">
+                <h2><i class="fa-solid fa-gear"></i> Settings</h2>
+                <button id="toggle-sidebar" class="icon-btn mobile-only"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <div class="settings-content">
+                <div class="input-group">
+                    <label for="api-key">Gemini API Key</label>
+                    <input type="password" id="api-key" placeholder="Enter your API Key..." />
+                    <small>Get yours from <a href="https://aistudio.google.com/app/apikey" target="_blank">Google AI Studio</a></small>
+                </div>
+
+
+
+                <button id="save-settings" class="primary-btn">Save Configuration</button>
+                <p id="save-status" class="status-msg"></p>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="chat-area glass-panel">
+            <div class="chat-header">
+                <button id="open-sidebar" class="icon-btn mobile-only"><i class="fa-solid fa-bars"></i></button>
+                <div class="profile-info">
+                    <div class="avatar"><i class="fa-solid fa-user-astronaut"></i></div>
+                    <div class="info">
+                        <h2>Avinash</h2>
+                        <span class="status"><span class="dot"></span>Online</span>
+                    </div>
+                </div>
+                <button id="clear-chat" class="icon-btn" title="Clear Chat"><i class="fa-solid fa-trash-can"></i></button>
+            </div>
+
+            <div class="chat-messages" id="chat-messages">
+                <div class="message ai-message init-msg" id="init-msg-container">
+                    <div class="msg-content" id="welcome-msg">
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-input-area">
+                <textarea id="message-input" placeholder="Type a message..." rows="1"></textarea>
+                <button id="send-btn" class="send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="three-bg.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
